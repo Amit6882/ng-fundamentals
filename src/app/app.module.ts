@@ -8,6 +8,7 @@ import { EventsListComponent } from './events/events-list.component';
 import { EventThumbnailComponent } from './events/event-thumbnail.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { EventService } from './events/shared/event.service';
+import { ToastrPopService } from './common/toastr.service';
 
  
 
@@ -16,8 +17,8 @@ import { EventService } from './events/shared/event.service';
     BrowserModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
-      timeOut: 10000,
-      positionClass: 'toast-bottom-right',
+      timeOut: 1000,
+      positionClass: 'toast-top-right',
       preventDuplicates: true,
     }), // ToastrModule added
   ],
@@ -27,7 +28,7 @@ import { EventService } from './events/shared/event.service';
     EventThumbnailComponent,
     NavBarComponent
   ],
-  providers: [EventService],
+  providers: [EventService, ToastrPopService],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
