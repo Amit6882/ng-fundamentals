@@ -2,17 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { RouterModule } from '@angular/router';
+
+import { 
+  EventsListComponent,
+  EventThumbnailComponent,
+  EventDetailsComponent,
+  CreateEventComponent,
+} from './events/index';
 
 import { EventsAppComponent } from './events-app.component';
-import { EventsListComponent } from './events/events-list.component';
-import { EventThumbnailComponent } from './events/event-thumbnail.component';
 import { NavBarComponent } from './nav/navbar.component';
-import { EventService } from './events/shared/event.service';
-import { ToastrPopService } from './common/toastr.service';
-import { EventDetailsComponent } from './events/events-detail/event-detail.component';
-import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
-import { CreateEventComponent } from './events/create-event.component';
 import { Error404Component } from './errors/404.component';
 
  
@@ -26,7 +27,7 @@ import { Error404Component } from './errors/404.component';
       timeOut: 1000,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
-    }), // ToastrModule added
+    })
   ],
   declarations: [
     EventsAppComponent,
@@ -37,9 +38,7 @@ import { Error404Component } from './errors/404.component';
     CreateEventComponent,
     Error404Component
   ],
-  providers: [
-    EventService, 
-    ToastrPopService,
+  providers: [ 
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState

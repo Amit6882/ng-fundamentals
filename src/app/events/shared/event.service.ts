@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { of, Subject } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class EventService {
     
     getEvents() {
