@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
+import { of, Subject } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Injectable()
 export class EventService {
     
     getEvents() {
-        return EVENTS;
+      return of(EVENTS).pipe(
+        delay(100)
+      );
     }
 
     getEvent(id: number) {

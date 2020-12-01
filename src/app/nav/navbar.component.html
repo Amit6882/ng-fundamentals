@@ -53,10 +53,10 @@
   <div class="collapse navbar-collapse" id="navb">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/events']">All Events</a>
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/events']" [routerLinkActiveOptions]="{exact: true}">All Events</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/events/new']">Create Event</a>
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/events/new']">Create Event</a>
       </li>
       <!-- Dropdown -->
       <li class="nav-item dropdown">
