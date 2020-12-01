@@ -13,6 +13,7 @@ import { EventDetailsComponent } from './events/events-detail/event-detail.compo
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { CreateEventComponent } from './events/create-event.component';
+import { Error404Component } from './errors/404.component';
 
  
 
@@ -33,7 +34,8 @@ import { CreateEventComponent } from './events/create-event.component';
     EventThumbnailComponent,
     NavBarComponent,
     EventDetailsComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    Error404Component
   ],
   providers: [EventService, ToastrPopService],
   bootstrap: [EventsAppComponent]
