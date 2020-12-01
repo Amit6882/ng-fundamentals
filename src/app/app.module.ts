@@ -9,6 +9,10 @@ import { EventThumbnailComponent } from './events/event-thumbnail.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { EventService } from './events/shared/event.service';
 import { ToastrPopService } from './common/toastr.service';
+import { EventDetailsComponent } from './events/events-detail/event-detail.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
+import { CreateEventComponent } from './events/create-event.component';
 
  
 
@@ -16,6 +20,7 @@ import { ToastrPopService } from './common/toastr.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule, // required animations module
+    RouterModule.forRoot(appRoutes),
     ToastrModule.forRoot({
       timeOut: 1000,
       positionClass: 'toast-top-right',
@@ -26,7 +31,9 @@ import { ToastrPopService } from './common/toastr.service';
     EventsAppComponent,
     EventsListComponent,
     EventThumbnailComponent,
-    NavBarComponent
+    NavBarComponent,
+    EventDetailsComponent,
+    CreateEventComponent
   ],
   providers: [EventService, ToastrPopService],
   bootstrap: [EventsAppComponent]
