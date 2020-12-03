@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,14 +11,20 @@ export class LoginComponent implements OnInit {
 
   userName;
   password;
+  mouseoverLogin;
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   login(formValues) {
-    console.log(formValues);
+    this.authService.loginUser(formValues.userName, formValues.password);
+    this.router.navigate(['/events']);
+  }
+
+  cancel() {
+    this.router.navigate(['/events']);
   }
 
 }
