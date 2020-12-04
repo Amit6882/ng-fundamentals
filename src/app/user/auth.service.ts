@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { first } from 'rxjs/operators';
 import { IUser } from './user.model';
 import { userRoutes } from './user.routes';
 
@@ -22,5 +23,10 @@ export class AuthService {
 
   isAuthenticated() {
     return !!this.currentUser;
+  }
+
+  updateCurrentUser(firstName: string, lastName:string) {
+    this.currentUser.firstName = firstName;
+    this.currentUser.lastName = lastName;
   }
 }
