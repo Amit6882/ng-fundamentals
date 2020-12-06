@@ -9,12 +9,14 @@ import {
   EventThumbnailComponent,
   EventDetailsComponent,
   CreateEventComponent,
+  CreateSessionComponent
 } from './events/index';
 
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { appRoutes } from './routes';
 import { Error404Component } from './errors/404.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
  
 
@@ -22,6 +24,8 @@ import { Error404Component } from './errors/404.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule, // required animations module
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     ToastrModule.forRoot({
       timeOut: 1000,
@@ -36,7 +40,8 @@ import { Error404Component } from './errors/404.component';
     NavBarComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
+    CreateSessionComponent
   ],
   providers: [ 
     {
