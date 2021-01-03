@@ -4,7 +4,7 @@
   <div class="col-md-6">
     <form [formGroup]="newSessionForm" (ngSubmit)="saveSession(newSessionForm.value)" autocomplete="off">
       <div class="form-group" [ngClass]="{'error': name.invalid && name.dirty}">
-        <label for="sessionName">Session Name: {{name.invalid}} - {{name.dirty}} - {{name.invalid && name.dirty}}</label>
+        <label for="sessionName">Session Name:</label>
         <em *ngIf="name.invalid && name.dirty">Required</em>
         <input formControlName="name" id="sessionName" type="text" class="form-control" placeholder="session name..." />
       </div>
@@ -42,6 +42,6 @@
         <textarea formControlName="abstract" id="abstract" rows=3 class="form-control" placeholder="abstract..."></textarea>
       </div>
       <button type="submit" class="btn btn-primary" [disabled]="newSessionForm.invalid">Save</button>
-      <button type="button" class="btn btn-default">Cancel</button>
+      <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
     </form>
   </div>
