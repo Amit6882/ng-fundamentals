@@ -8,7 +8,7 @@ import { EventService } from '../shared/event.service';
     styles: [`
         .container { padding-left: 20px, padding-right: 20px; }
         .event-image { height: 100px; } 
-        a {cursor: pointer;}
+        a {cursor: pointer; color: red !important;}
     `]
 })
 export class EventDetailsComponent implements OnInit {

@@ -19,6 +19,7 @@ import { appRoutes } from './routes';
 import { Error404Component } from './errors/404.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
+import { DurationPipe } from './events/shared/duration.pipe';
 
  
 
@@ -45,7 +46,8 @@ import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-
     Error404Component,
     CreateSessionComponent,
     SessionListComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   providers: [ 
     {
