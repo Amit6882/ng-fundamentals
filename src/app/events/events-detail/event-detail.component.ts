@@ -9,11 +9,14 @@ import { EventService } from '../shared/event.service';
         .container { padding-left: 20px, padding-right: 20px; }
         .event-image { height: 100px; } 
         a {cursor: pointer; color: red !important;}
+        button {margin: 5px;}
     `]
 })
 export class EventDetailsComponent implements OnInit {
     event: IEvent;
     addMode: boolean;
+    filterBy = 'all';
+    sortBy = 'votes';
     constructor(private eventService: EventService, private route: ActivatedRoute) { }
 
     ngOnInit() {
